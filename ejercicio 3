@@ -1,0 +1,37 @@
+#include <iostream>
+/*3. Usando un puntero, escriba un programa que encuentre el m�ximo de un conjunto de
+enteros que ingresa el usuario. El usuario ingresa al principio el tama�o de la muestra*/
+using namespace std;
+void ingresar(int[],int);
+int maximo(int[],int);
+int main()
+{
+    int tam;
+    cout << "Ingrese el tama�o del vector: " << endl;
+    cin>>tam;
+    int *v = new int[tam];
+    ingresar(v,tam);
+    cout<<"\n El valor maximo es: " << maximo(v,tam);
+    return 0;
+}
+void ingresar(int v[],int tam)
+{
+    int *p=v;
+    for(int i=0; i<tam; i++)
+    {
+        cout<<"\nn."<<i+1<<" : ";
+        cin>>*(p+i);
+    }
+}
+int maximo(int v[],int tam)
+{
+    int *p=v,maxi;
+    for(int i=0; i<tam; i++)
+    {
+        if(*(p+i)>maxi||i==0)
+        {
+            maxi=*(p+i);
+        }
+    }
+    return maxi;
+}
