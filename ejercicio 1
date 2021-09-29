@@ -1,0 +1,29 @@
+#include <iostream>
+
+using namespace std;
+void mostrar(int[],int);
+void ingresar(int[],int);
+int main()
+{
+    int v[5],*ve;
+    ve=v;
+    ingresar(ve,5);
+    mostrar(ve,5);
+    return 0;
+}
+void mostrar(int ve,int cant)
+{
+    int *vecto=v;
+    for(int i=0; i<cant; i++)
+    {
+        cout<<*(vecto+i)<<" -> ";
+    }
+}
+void ingresar(int *&v,int longi)
+{
+    for(int i=0;i<longi; i++)
+    {
+        cout<<"\nnum "<<i+1<<" : ";}
+        cin>>*(v+i);
+    }
+}
