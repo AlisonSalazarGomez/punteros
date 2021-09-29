@@ -1,0 +1,51 @@
+#include <iostream>
+/*4. Escriba un subprograma que ordene un array, el tama�o del array lo define el usuario y
+luego ingresa sus elementos. Debe hacerse todo a trav�s del uso de punteros*/
+using namespace std;
+void ingresar(int[],int);
+void ordenar(int[],int);
+void mostrar(int[],int);
+int main()
+{
+    int tam;
+    cout << "\n\tIngrese le tama�o del vector: ";
+    cin>>tam;
+    int *v=new int[tam];
+    ingresar(v,tam);
+    ordenar(v,tam);
+    mostrar(v,tam);
+    return 0;
+}
+void ingresar(int v[],int tam)
+{
+    int *p=v;
+    for(int i=0; i<tam; i++)
+    {
+        cout<<"\nn."<<i+1<<" : ";
+        cin>>*(p+i);
+    }
+}
+void ordenar(int v[],int tam)
+{
+    int aux,*p=v;
+    for(int i=0; i<tam; i++)
+    {
+        for(int j=i; j<tam; j++)
+        {
+            if(*(p+i)>*(p+j))
+            {
+                aux=*(p+i);
+                *(p+i)=*(p+j);
+                *(p+j)=aux;
+            }
+        }
+    }
+}
+void mostrar(int v[],int tam)
+{
+    int *p=v;
+    for(int i=0; i<tam; i++)
+    {
+        cout<<*(p+i)<<"->";
+    }
+}
